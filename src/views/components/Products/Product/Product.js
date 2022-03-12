@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 
 const Product = ({ product }) => {
 	return (
@@ -14,6 +14,9 @@ const Product = ({ product }) => {
 						{product.title}
 					</Card.Title>
 					<Card.Text>{product.description}</Card.Text>
+					<Button>
+						<i class="fas fa-shopping-cart"></i> Add to cart
+					</Button>
 				</Card.Body>
 			</Card>
 		</Col>

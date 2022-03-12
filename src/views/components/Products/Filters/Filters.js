@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 
+const catagory = ["men", "women", "sports", "kids"];
+
 const Filters = ({ filterProduct }) => {
 	return (
 		<Container className="filters d-flex justify-content-between pt-3">
@@ -12,40 +14,19 @@ const Filters = ({ filterProduct }) => {
 					size="sm"
 					onClick={() => filterProduct("all")}
 				>
-					CLEAR ALL{" "}
+					CLEAR ALL
 				</Button>
-				<Button
-					variant="outline-secondary"
-					className="border-0 rounded-pill px-3"
-					size="sm"
-					onClick={() => filterProduct("men")}
-				>
-					Men
-				</Button>
-				<Button
-					variant="outline-secondary"
-					className="border-0 rounded-pill px-3"
-					size="sm"
-					onClick={() => filterProduct("women")}
-				>
-					Women
-				</Button>
-				<Button
-					variant="outline-secondary"
-					className="border-0 rounded-pill px-3"
-					size="sm"
-					onClick={() => filterProduct("kids")}
-				>
-					Kids
-				</Button>
-				<Button
-					variant="outline-secondary"
-					className="border-0 rounded-pill px-3"
-					size="sm"
-					onClick={() => filterProduct("sports")}
-				>
-					Sports
-				</Button>
+				{catagory.map((text, index) => (
+					<Button
+						key={index}
+						variant="outline-secondary"
+						className="border-0 rounded-pill px-3 text-uppercase"
+						size="sm"
+						onClick={() => filterProduct(text)}
+					>
+						{text}
+					</Button>
+				))}
 			</div>
 
 			<Form.Control
