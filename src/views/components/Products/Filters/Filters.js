@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 
-const Filters = () => {
+const Filters = ({ filterProduct }) => {
 	return (
 		<Container className="filters d-flex justify-content-between pt-3">
 			<h5>FILTERS</h5>
@@ -10,6 +10,7 @@ const Filters = () => {
 					variant="btn"
 					className="border-0 rounded-pill px-3 fw-bold text-danger bg-none"
 					size="sm"
+					onClick={() => filterProduct("all")}
 				>
 					CLEAR ALL{" "}
 				</Button>
@@ -17,6 +18,7 @@ const Filters = () => {
 					variant="outline-secondary"
 					className="border-0 rounded-pill px-3"
 					size="sm"
+					onClick={() => filterProduct("men")}
 				>
 					Men
 				</Button>
@@ -24,6 +26,7 @@ const Filters = () => {
 					variant="outline-secondary"
 					className="border-0 rounded-pill px-3"
 					size="sm"
+					onClick={() => filterProduct("women")}
 				>
 					Women
 				</Button>
@@ -31,6 +34,7 @@ const Filters = () => {
 					variant="outline-secondary"
 					className="border-0 rounded-pill px-3"
 					size="sm"
+					onClick={() => filterProduct("kids")}
 				>
 					Kids
 				</Button>
@@ -38,6 +42,7 @@ const Filters = () => {
 					variant="outline-secondary"
 					className="border-0 rounded-pill px-3"
 					size="sm"
+					onClick={() => filterProduct("sports")}
 				>
 					Sports
 				</Button>
