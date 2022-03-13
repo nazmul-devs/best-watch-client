@@ -1,0 +1,10 @@
+.product-details {
+	position: relative;
+}
+
+.shopping-cart {
+	position: sticky;
+	background-color: yellow;
+	height: 200px;
+	top: 0;
+}

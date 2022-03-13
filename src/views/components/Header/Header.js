@@ -1,21 +1,15 @@
 import React from "react";
-import {
-	Navbar,
-	Container,
-	Nav,
-	Form,
-	FormControl,
-	Button,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, Form, FormControl } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../../../assests/logo/logo.jpg";
 
 const Header = () => {
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
-				<Navbar.Brand href="#home">
+				<Link to="/">
 					<img src={logo} width="70" className="rounded-circle" alt="" />
-				</Navbar.Brand>
+				</Link>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto">
