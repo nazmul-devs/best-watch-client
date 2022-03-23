@@ -2,8 +2,9 @@ import React from "react";
 import { Navbar, Container, Nav, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../../assests/logo/logo.jpg";
+import Cart from "../cart/Cart";
 
-const Header = () => {
+const Header = ({ handleShow }) => {
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
@@ -28,7 +29,8 @@ const Header = () => {
 					<Nav>
 						<Nav.Link href="#deets">Profile</Nav.Link>
 						<Nav.Link href="#deets">Wishlist</Nav.Link>
-						<Nav.Link href="#deets">Bag</Nav.Link>
+
+						<Cart />
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

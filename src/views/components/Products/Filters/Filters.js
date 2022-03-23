@@ -10,11 +10,11 @@ const Filters = ({ filterProduct }) => {
 			<div className="catagory d-flex">
 				<Button
 					variant="btn"
-					className="border-0 rounded-pill px-3 fw-bold text-danger bg-none"
+					className="border-0 rounded-pill px-3 fw-bold text-primary bg-none"
 					size="sm"
 					onClick={() => filterProduct("all")}
 				>
-					CLEAR ALL
+					SHOW ALL
 				</Button>
 				{catagory.map((text, index) => (
 					<Button

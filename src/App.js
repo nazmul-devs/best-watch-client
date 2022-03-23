@@ -6,6 +6,8 @@ import Home from "./views/pages/Home/Home";
 import PorductDetails from "./views/pages/ProductDetails/ProductDetals";
 
 function App() {
+	// Cart setup
+
 	return (
 		<BrowserRouter>
 			<Header />
