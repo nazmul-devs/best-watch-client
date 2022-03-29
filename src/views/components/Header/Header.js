@@ -2,9 +2,11 @@ import React from "react";
 import { Navbar, Container, Nav, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../../assests/logo/logo.jpg";
+import UseFirebase from "../../../hooks/UseFirebase";
 import Cart from "../cart/Cart";
 
 const Header = ({ handleShow }) => {
+	const { user, logout } = UseFirebase();
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
@@ -31,6 +33,7 @@ const Header = ({ handleShow }) => {
 						<Nav.Link href="#deets">Wishlist</Nav.Link>
 
 						<Cart />
+						{user.email && <button onClick={logout}>Logout</button>}
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
