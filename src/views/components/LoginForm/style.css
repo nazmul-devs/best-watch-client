@@ -1,0 +1,22 @@
+.login-form {
+	background: #fff;
+	border-radius: 20px;
+	width: 400px;
+}
+.form-control {
+	border-radius: 13px;
+	font-size: 17px;
+}
+.form-label {
+	font-size: 17px;
+	margin: 5px;
+}
+.forgot-pass {
+	cursor: pointer;
+}
+.link-btn {
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+	text-align: center;
+}

@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Offcanvas } from "react-bootstrap";
+import { Offcanvas, Button } from "react-bootstrap";
 
 const Cart = () => {
 	const [show, setShow] = useState(false);
@@ -9,7 +9,13 @@ const Cart = () => {
 
 	return (
 		<>
-			<button onClick={handleShow}>Launch</button>
+			<Button
+				variant="outline-secondary"
+				className="border-0 bg-none"
+				onClick={handleShow}
+			>
+				Cart
+			</Button>
 
 			<Offcanvas show={show} onHide={handleClose}>
 				<Offcanvas.Header closeButton>

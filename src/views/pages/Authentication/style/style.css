@@ -1,0 +1,10 @@
+.login-container {
+	background: url(../../../../assests/images/login-bg.jpg) no-repeat center;
+	background-size: cover;
+	min-height: 90vh;
+	padding: 20px;
+}
+
+.login-title {
+	text-align: center;
+}
