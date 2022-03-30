@@ -91,7 +91,7 @@ const Products = () => {
 		}
 	};
 	return (
-		<div>
+		<div className="mb-5">
 			<Filters filterProduct={filterProduct} />
 			<hr />
 			<Container>
