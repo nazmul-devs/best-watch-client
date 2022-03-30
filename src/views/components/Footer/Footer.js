@@ -25,7 +25,7 @@ const footerInfo = [
 
 const Footer = () => {
 	return (
-		<div className="mt-5">
+		<div>
 			<div className="feedback text-center p-4">
 				<p>We’d love to hear what you think!</p>
 				<Button
@@ -63,7 +63,7 @@ const Footer = () => {
 				</Container>
 				<hr />
 				<p className="text-center copy-right-text m-0 pb-3">
-					© 2022 Walmart. All Rights Reserved.
+					© 2022 Walmart. All Rights Reserved.{" "}
 				</p>
 			</div>
 		</div>

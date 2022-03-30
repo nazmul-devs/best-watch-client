@@ -1,11 +1,8 @@
 import React from "react";
+import "./style.css";
 
 const NotFound = () => {
-	return (
-		<div>
-			<h2>Pages not found</h2>
-		</div>
-	);
+	return <div className="not-found"></div>;
 };
 
 export default NotFound;

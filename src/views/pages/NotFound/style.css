@@ -1,0 +1,5 @@
+.not-found {
+	background: url("../../../assests/images/notFound.gif") no-repeat center;
+	height: 100vh;
+	background-size: cover;
+}

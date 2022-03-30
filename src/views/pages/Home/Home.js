@@ -4,7 +4,7 @@ import HomeProducts from "../../components/HomeProducts/HomeProducts";
 
 const Home = () => {
 	return (
-		<div>
+		<div className="mb-5">
 			<Banner />
 			<HomeProducts />
 		</div>
