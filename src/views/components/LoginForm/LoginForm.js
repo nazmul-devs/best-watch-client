@@ -4,13 +4,18 @@ import LoginWith from "../LoginWith/LoginWith";
 import { useForm } from "react-hook-form";
 import "./style.css";
 import UseFirebase from "../../../hooks/UseFirebase";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginForm = ({ value }) => {
+	const location = useLocation();
+	const navigate = useNavigate();
 	const { registerUser, login, error } = UseFirebase();
 	// react hook form
 	const { register, handleSubmit, reset } = useForm();
 	const onSubmit = (data) => {
-		value === "register" ? registerUser(data) : login(data);
+		value === "register"
+			? registerUser(data, location, navigate)
+			: login(data, location, navigate);
 
 		reset();
 	};

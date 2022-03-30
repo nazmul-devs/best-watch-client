@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./product.css";
 
@@ -16,7 +16,8 @@ const Product = ({ product, index }) => {
 						<Card.Title className="my-2 fw-bold fs-6">
 							{product.title}
 						</Card.Title>
-						<Card.Text>{product.description}</Card.Text>
+						<Card.Text>{product.description.slice(0, 100)}</Card.Text>
+						<Button className="py-1 px-3">Add to cart</Button>
 					</Card.Body>
 				</Card>
 			</Link>

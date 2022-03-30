@@ -21,17 +21,20 @@ const UseFirebase = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 
-	// google login
-	const googleLogin = () => {
+	// google login=========================
+	const googleLogin = (location, navigate) => {
 		signInWithPopup(auth, provider)
-			.then((result) => {})
+			.then((result) => {
+				const path = location?.state?.from || "/";
+				navigate(path);
+			})
 			.catch((error) => {
 				setError(error.message);
 			});
 	};
 
-	// user register
-	const registerUser = (data) => {
+	// user register==========================
+	const registerUser = (data, location, navigate) => {
 		setLoading(true);
 		const { email, password, dislayName } = data;
 		createUserWithEmailAndPassword(auth, email, password)
@@ -42,8 +45,8 @@ const UseFirebase = () => {
 					displayName: dislayName,
 				})
 					.then(() => {
-						// save user call
-						// saveUser(email, dislayName, "POST");
+						const path = location?.state?.from || "/";
+						navigate(path);
 					})
 					.catch((error) => {
 						setError(error.message);
@@ -57,13 +60,13 @@ const UseFirebase = () => {
 			});
 	};
 
-	// user login
-	const login = (data) => {
+	// user login===========================
+	const login = (data, location, navigate) => {
 		setLoading(true);
 		signInWithEmailAndPassword(auth, data.email, data.password)
 			.then((userCredential) => {
-				// const path = location?.state?.from || "/";
-				// history.replace(path);
+				const path = location?.state?.from || "/";
+				navigate(path);
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -71,7 +74,7 @@ const UseFirebase = () => {
 			.finally(() => setLoading(false));
 	};
 
-	// onauth state change
+	// onauth state change===================================
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
@@ -84,7 +87,7 @@ const UseFirebase = () => {
 		return unsubscribe;
 	}, []);
 
-	// Logout
+	// Logout===============================
 	const logout = () => {
 		signOut(auth)
 			.then(() => {

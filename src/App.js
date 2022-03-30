@@ -10,6 +10,7 @@ import Login from "./views/pages/Authentication/Login/Login";
 import Register from "./views/pages/Authentication/Register/Register";
 import NotFound from "./views/pages/NotFound/NotFound";
 import AuthProvider from "./contexts/AuthProvider";
+import Footer from "./views/components/Footer/Footer";
 
 function App() {
 	// Cart setup
@@ -28,6 +29,7 @@ function App() {
 					<Route path="/register" element={<Register />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
+				<Footer />
 			</BrowserRouter>
 		</AuthProvider>
 	);

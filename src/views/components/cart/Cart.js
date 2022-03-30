@@ -9,13 +9,14 @@ const Cart = () => {
 
 	return (
 		<>
-			<Button
+			<button
 				variant="outline-secondary"
-				className="border-0 bg-none"
+				className="border-0 fw-bold"
+				style={{ color: "#000", background: "none" }}
 				onClick={handleShow}
 			>
 				Cart
-			</Button>
+			</button>
 
 			<Offcanvas show={show} onHide={handleClose}>
 				<Offcanvas.Header closeButton>
