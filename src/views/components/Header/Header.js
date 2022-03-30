@@ -7,6 +7,7 @@ import Cart from "../cart/Cart";
 
 const Header = ({ handleShow }) => {
 	const { user, logout } = UseFirebase();
+	console.log(user);
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Container>
@@ -33,7 +34,19 @@ const Header = ({ handleShow }) => {
 						<Nav.Link href="#deets">Wishlist</Nav.Link>
 
 						<Cart />
-						{user.email && <button onClick={logout}>Logout</button>}
+						<button className="border-0 bg-dark text-secondary fw-bold px-4">
+							{user.displayName}
+						</button>
+						{user.email ? (
+							<button
+								onClick={logout}
+								className="border-0 rounded-pill px-4"
+							>
+								Logout
+							</button>
+						) : (
+							<Link to="/login">Login</Link>
+						)}
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

@@ -5,10 +5,9 @@ import github from "../../../../src/assests/logo/github.png";
 import { Link } from "react-router-dom";
 import UseFirebase from "../../../hooks/UseFirebase";
 const LoginWith = ({ value }) => {
-	const { googleLogin, logout, user } = UseFirebase();
+	const { googleLogin, logout } = UseFirebase();
 	return (
 		<>
-			<h2>{user.displayName}</h2>
 			<div className="login-btn-grp d-flex justify-content-center align-items-center">
 				<button
 					className="google-login rounded-pill bg-dark text-white p-1 mx-2"
