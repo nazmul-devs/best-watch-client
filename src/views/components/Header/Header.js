@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import logo from "../../../assests/logo/logo.jpg";
 import UseFirebase from "../../../hooks/UseFirebase";
 import Cart from "../cart/Cart";
+import NavDropdown from "../NavBarDropdown/NavDropdown";
 import "./style.css";
 
 const Header = ({ handleShow }) => {
-	const { user, logout } = UseFirebase();
+	const { user } = UseFirebase();
 	return (
 		<Navbar
 			collapseOnSelect
@@ -24,12 +25,7 @@ const Header = ({ handleShow }) => {
 					<Nav className="me-auto nav-items d-flex align-items-center">
 						{user.email && (
 							<>
-								<>
-									<Link to="/login" className="nav-item">
-										My order
-									</Link>
-									<Cart />
-								</>
+								<Cart />
 								{user.role === "admin" && (
 									<>
 										<Link to="/login" className="nav-item">
@@ -57,17 +53,7 @@ const Header = ({ handleShow }) => {
 					</Nav>
 					<Nav>
 						{user.email ? (
-							<>
-								<button className="border-0 fw-bold px-4">
-									{user.displayName}
-								</button>
-								<button
-									onClick={logout}
-									className="border-0 rounded-pill px-4"
-								>
-									Logout
-								</button>
-							</>
+							<NavDropdown />
 						) : (
 							<Link to="/login">
 								<Button className="px-3 py-1">Login</Button>

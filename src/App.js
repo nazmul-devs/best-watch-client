@@ -12,6 +12,7 @@ import NotFound from "./views/pages/NotFound/NotFound";
 import AuthProvider from "./contexts/AuthProvider";
 import Footer from "./views/components/Footer/Footer";
 import Products from "./views/components/Products/Products";
+import MyOrder from "./views/pages/MyOrder/MyOrder";
 
 function App() {
 	// Cart setup
@@ -23,6 +24,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/services" element={<Products />} />
+					<Route path="/myorder" element={<MyOrder />} />
 					<Route
 						path="/productdetails/:index"
 						element={<PorductDetails />}

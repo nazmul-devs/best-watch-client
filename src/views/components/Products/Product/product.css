@@ -6,3 +6,30 @@
 	text-decoration: none;
 	color: #1d1d1d;
 }
+.card:hover {
+	box-shadow: 2px 2px 10px lightgray;
+}
+
+.card-title {
+	font-size: 16px;
+}
+.card-brand {
+	font-size: 17px;
+	font-weight: bold;
+}
+.card-rating {
+	color: #ffc93c;
+}
+.card-btn {
+	display: none;
+}
+.add-to-card-btn {
+	background: #34b0c9;
+	border: none;
+	color: white;
+}
+.buy-now-btn {
+	background: #ffc93c;
+	border: none;
+	color: white;
+}
