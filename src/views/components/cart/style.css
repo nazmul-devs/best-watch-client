@@ -7,3 +7,21 @@
 	display: none;
 	transition: 4s;
 }
+
+/* cart button style */
+.cart-btn {
+	background: none;
+	border: none;
+	margin: 0 20px;
+	position: relative;
+}
+.cart-btn .cart-quantity {
+	background: #ffffffb4;
+	color: #17043c;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 0 5px;
+	border-radius: 50%;
+	position: absolute;
+	top: -5px;
+}

@@ -25,7 +25,7 @@ const footerInfo = [
 
 const Footer = () => {
 	return (
-		<div>
+		<div className="mt-5">
 			<div className="feedback text-center p-4">
 				<p>We’d love to hear what you think!</p>
 				<Button

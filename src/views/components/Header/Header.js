@@ -44,9 +44,6 @@ const Header = ({ handleShow }) => {
 								)}
 							</>
 						)}
-						<Link to="/aboutus" className="nav-item">
-							About us
-						</Link>
 						<Link to="/services" className="nav-item">
 							Services
 						</Link>

@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Offcanvas, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const cartItems = [
@@ -30,13 +31,11 @@ const Cart = () => {
 
 	return (
 		<>
-			<button
-				variant="outline-secondary"
-				className="border-0 fw-bold"
-				style={{ color: "#000", background: "none" }}
-				onClick={handleShow}
-			>
-				Cart
+			<button onClick={handleShow} className="cart-btn">
+				<span className="cart-icon">
+					<i class="fas fa-shopping-cart"></i>
+				</span>
+				<span className="cart-quantity">{totalQuantity}</span>
 			</button>
 
 			<Offcanvas show={show} onHide={handleClose}>
@@ -80,9 +79,11 @@ const Cart = () => {
 						>
 							CLEAR CART
 						</Button>
-						<Button size="sm" variant="outline-secondary py-1 px-3">
-							<i class="fas fa-check me-2"></i>CHECKOUT
-						</Button>
+						<Link to="/checkout">
+							<Button size="sm" variant="outline-secondary py-1 px-3">
+								<i class="fas fa-check me-2"></i>CHECKOUT
+							</Button>
+						</Link>
 					</span>
 				</Offcanvas.Body>
 			</Offcanvas>

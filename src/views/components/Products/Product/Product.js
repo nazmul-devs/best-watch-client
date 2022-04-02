@@ -32,14 +32,6 @@ const Product = ({ product, index }) => {
 						/>
 						<p>({product.rating})</p>
 					</span>
-					<div className="card-btn d-flex justify-content-center">
-						<Button
-							className="rounded-pill add-to-card-btn fw-bold border-2 px-3"
-							variant="outline-dark"
-						>
-							Add to card
-						</Button>
-					</div>
 				</Card.Body>
 			</Card>
 		</Col>

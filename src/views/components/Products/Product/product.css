@@ -7,7 +7,7 @@
 	color: #1d1d1d;
 }
 .card:hover {
-	box-shadow: 2px 2px 10px lightgray;
+	box-shadow: 2px 4px 10px #9b9b9b;
 }
 .card-title {
 	font-size: 16px;
