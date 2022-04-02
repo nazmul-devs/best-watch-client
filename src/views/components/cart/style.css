@@ -1,0 +1,9 @@
+.cart-item:hover .remove-item-btn {
+	display: block;
+}
+
+.remove-item-btn {
+	background: none;
+	display: none;
+	transition: 4s;
+}

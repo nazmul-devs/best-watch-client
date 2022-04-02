@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Offcanvas, Button } from "react-bootstrap";
+import "./style.css";
 
 const cartItems = [
 	{
@@ -46,7 +47,7 @@ const Cart = () => {
 					{cartItems.map((item, index) => (
 						<div
 							key={index}
-							className="d-flex align-items-center justify-content-around border-bottom"
+							className="d-flex align-items-center justify-content-around border-bottom cart-item"
 						>
 							<img
 								width={120}
@@ -55,6 +56,9 @@ const Cart = () => {
 								alt=""
 							/>
 							<span>
+								<button className="float-end remove-item-btn border-0">
+									<i class="far fa-times-circle "></i>
+								</button>
 								<h6 className="p-0 m-0 text-justify">{item.title}</h6>
 								<p className="p-0 m-0" style={{ fontSize: "16px" }}>
 									{item.quantity} <i class="fas fa-times mx-1"></i>$
@@ -74,7 +78,7 @@ const Cart = () => {
 							size="sm"
 							variant="outline-warning rounded-pill py-1 px-3"
 						>
-							VIEW CART
+							CLEAR CART
 						</Button>
 						<Button size="sm" variant="outline-secondary py-1 px-3">
 							<i class="fas fa-check me-2"></i>CHECKOUT
