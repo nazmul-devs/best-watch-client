@@ -12,12 +12,14 @@ const Product = ({ product, index }) => {
 					<Card.Img variant="top" src={product.img} />
 				</Link>
 				<Card.Body className="text-start card-body">
-					<Card.Text className="fw-bold my-0 fs-5">
-						Price ${product.price}
-					</Card.Text>
-					<Card.Text className="my-0 card-brand">
-						{product.brand}
-					</Card.Text>
+					<span className="d-flex justify-content-between align-items-center mb-2">
+						<Card.Text className="my-0 card-brand">
+							Price ${product.price}
+						</Card.Text>
+						<Card.Text className="my-0 card-brand">
+							{product.brand}
+						</Card.Text>
+					</span>
 					<p className="card-title">{product.title}</p>
 					<span className="d-flex">
 						<Rating
@@ -30,12 +32,13 @@ const Product = ({ product, index }) => {
 						/>
 						<p>({product.rating})</p>
 					</span>
-
-					<div className="d-flex align-items-center justify-content-between">
-						<button className="py-1 px-3  add-to-card-btn">
-							Add to cart
-						</button>
-						<button className="py-1 px-3 buy-now-btn">Buy now</button>
+					<div className="card-btn d-flex justify-content-center">
+						<Button
+							className="rounded-pill add-to-card-btn fw-bold border-2 px-3"
+							variant="outline-dark"
+						>
+							Add to card
+						</Button>
 					</div>
 				</Card.Body>
 			</Card>

@@ -7,7 +7,7 @@ import { products } from "../Products/Products";
 const HomeProducts = () => {
 	return (
 		<Container className="pb-5">
-			<Row xs={1} md={2} lg={3} className="g-4">
+			<Row xs={1} md={3} lg={4} className="g-4">
 				{products.slice(0, 6).map((product, index) => (
 					<Product key={index} index={index} product={product}></Product>
 				))}

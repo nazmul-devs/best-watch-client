@@ -8,10 +8,10 @@ import OrderCart from "../../components/OrderCart/OrderCart";
 const ProductDetals = (props) => {
 	const { index } = useParams();
 	const product = products[index];
-	console.log(product);
 
 	return (
-		<div className="mx-5 product-details">
+		<div className="m-5 product-details">
+			<h5 className="my-4">{product.title}</h5>
 			<Row>
 				<Col sm={12} md={8}>
 					<Container>

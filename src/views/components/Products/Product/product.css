@@ -9,7 +9,6 @@
 .card:hover {
 	box-shadow: 2px 2px 10px lightgray;
 }
-
 .card-title {
 	font-size: 16px;
 }
@@ -20,16 +19,7 @@
 .card-rating {
 	color: #ffc93c;
 }
-.card-btn {
-	display: none;
-}
+
 .add-to-card-btn {
-	background: #34b0c9;
-	border: none;
-	color: white;
-}
-.buy-now-btn {
-	background: #ffc93c;
-	border: none;
-	color: white;
+	transition: 0.6s;
 }
