@@ -2,13 +2,13 @@ import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../../assests/logo/logo.jpg";
-import UseFirebase from "../../../hooks/UseFirebase";
+import UseAuth from "../../../hooks/UseAuth";
 import Cart from "../cart/Cart";
 import NavDropdown from "../NavBarDropdown/NavDropdown";
 import "./style.css";
 
 const Header = ({ handleShow }) => {
-	const { user } = UseFirebase();
+	const { user } = UseAuth();
 	return (
 		<Navbar
 			collapseOnSelect
@@ -28,8 +28,8 @@ const Header = ({ handleShow }) => {
 								<Cart />
 								{user.role === "admin" && (
 									<>
-										<Link to="/login" className="nav-item">
-											Add product
+										<Link to="/addService" className="nav-item">
+											Add service
 										</Link>
 										<Link to="/login" className="nav-item">
 											Update
@@ -46,6 +46,9 @@ const Header = ({ handleShow }) => {
 						)}
 						<Link to="/services" className="nav-item">
 							Services
+						</Link>
+						<Link to="/admin" className="nav-item">
+							Admin
 						</Link>
 					</Nav>
 					<Nav>

@@ -80,7 +80,11 @@ const Cart = () => {
 							CLEAR CART
 						</Button>
 						<Link to="/checkout">
-							<Button size="sm" variant="outline-secondary py-1 px-3">
+							<Button
+								onClick={handleClose}
+								size="sm"
+								variant="outline-secondary py-1 px-3"
+							>
 								<i class="fas fa-check me-2"></i>CHECKOUT
 							</Button>
 						</Link>

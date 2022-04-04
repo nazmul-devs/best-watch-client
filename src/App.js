@@ -14,6 +14,8 @@ import Footer from "./views/components/Footer/Footer";
 import Products from "./views/components/Products/Products";
 import MyOrder from "./views/pages/MyOrder/MyOrder";
 import Checkout from "./views/pages/Checkout/Checkout";
+import AddService from "./views/pages/AddService/AddService";
+import Admin from "./views/pages/Admin/Admin";
 
 function App() {
 	// Cart setup
@@ -24,14 +26,16 @@ function App() {
 				<Header />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/services" element={<Products />} />
-					<Route path="/myorder" element={<MyOrder />} />
+					<Route path="/addService" element={<AddService />} />
+					<Route path="/admin" element={<Admin />} />
 					<Route path="/checkout" element={<Checkout />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/myorder" element={<MyOrder />} />
+					<Route path="/services" element={<Products />} />
 					<Route
 						path="/productdetails/:index"
 						element={<PorductDetails />}
 					/>
-					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
