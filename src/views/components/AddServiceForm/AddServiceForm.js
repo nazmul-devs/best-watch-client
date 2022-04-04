@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import FileBase64 from "react-file-base64";
+import { products } from "../../components/Products/Products";
 
-const AddServiceForm = () => {
+const AddServiceForm = ({ updateId }) => {
 	// react file base 64
 	const [file, setFile] = useState("");
 
@@ -14,17 +15,20 @@ const AddServiceForm = () => {
 
 		reset();
 	};
+	const service = products.find((product) => product.id === updateId);
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)} className="p-5">
 			<Form.Control
 				className="mb-3 rounded"
 				placeholder="Service title"
 				{...register("title")}
+				defaultValue={updateId ? service.title : null}
 			/>
 			<Form.Control
 				as="textarea"
 				className="mb-3 rounded"
 				placeholder="Description"
+				defaultValue={updateId ? service.description : null}
 				{...register("description")}
 				rows={3}
 			/>
@@ -43,6 +47,7 @@ const AddServiceForm = () => {
 				<Form.Select
 					placeholder="Gender"
 					className="rounded"
+					defaultChecked={"Women"}
 					{...register("gender")}
 				>
 					<option value="Men">Male</option>

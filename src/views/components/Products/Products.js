@@ -5,6 +5,7 @@ import Product from "./Product/Product";
 
 export const products = [
 	{
+		id: 1,
 		title: "Citizen Men's Eco-Drive Star Wars Luke and Darth Vader Duel Bracelet Watch AW1140-51W",
 		brand: "CITIZEN",
 		gender: "men",
@@ -17,6 +18,7 @@ export const products = [
 	},
 
 	{
+		id: 2,
 		title: "Citizen Men's Eco-Drive Weekender Avion Stainless Steel Watch AW1361-01E",
 		brand: "CITIZEN",
 		gender: "men",
@@ -28,6 +30,7 @@ export const products = [
 		catagory: "kids",
 	},
 	{
+		id: 3,
 		title: "Kendall + Kylie Watch: Silver Toned and Shiny Stone Chain Link and Bracelet Set",
 		brand: "Kendall + Kylie",
 		gender: "Femal",
@@ -40,6 +43,7 @@ export const products = [
 	},
 
 	{
+		id: 4,
 		title: "Citizen Men's Eco-Drive Weekender Avion Stainless Steel Watch AW1361-01E",
 		brand: "CITIZEN",
 		gender: "men",
@@ -51,6 +55,7 @@ export const products = [
 		catagory: "kids",
 	},
 	{
+		id: 5,
 		title: "Citizen Men's Eco-Drive Star Wars Luke and Darth Vader Duel Bracelet Watch AW1140-51W",
 		brand: "CITIZEN",
 		gender: "men",
@@ -63,6 +68,7 @@ export const products = [
 	},
 
 	{
+		id: 6,
 		title: "Citizen Men's Eco-Drive Weekender Avion Stainless Steel Watch AW1361-01E",
 		brand: "CITIZEN",
 		gender: "men",
