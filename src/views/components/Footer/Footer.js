@@ -52,8 +52,12 @@ const Footer = () => {
 						{footerInfo.map((info, index) => (
 							<Col key={index} xs="12" md="2">
 								<h6 className="text-secondary">{info.title}</h6>
-								{info.links.map((link) => (
-									<a href className="border-0 bg-none d-block">
+								{info.links.map((link, index) => (
+									<a
+										key={index}
+										href="#nothing"
+										className="border-0 bg-none d-block"
+									>
 										{link}
 									</a>
 								))}

@@ -32,7 +32,8 @@ const CheckoutCart = () => {
 				<div className="item mb-2 pb-2">
 					<h6>{item.title}</h6>
 					<p className="p-0 m-0" style={{ fontSize: "16px" }}>
-						{item.quantity} <i class="fas fa-times mx-1"></i>${item.price}
+						{item.quantity} <i className="fas fa-times mx-1"></i>$
+						{item.price}
 					</p>
 				</div>
 			))}

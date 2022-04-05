@@ -15,13 +15,14 @@ InitialFirebase();
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
+// UseFirebase function===================================
 const UseFirebase = () => {
 	// internal variable
 	const [user, setUser] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 
-	// google login=========================
+	//===================== google login=========================
 	const googleLogin = (location, navigate) => {
 		signInWithPopup(auth, provider)
 			.then((result) => {
@@ -33,7 +34,7 @@ const UseFirebase = () => {
 			});
 	};
 
-	// user register==========================
+	//================= user register==========================
 	const registerUser = (data, location, navigate) => {
 		setLoading(true);
 		const { email, password, dislayName } = data;
@@ -60,7 +61,7 @@ const UseFirebase = () => {
 			});
 	};
 
-	// user login===========================
+	//==================== user login===========================
 	const login = (data, location, navigate) => {
 		setLoading(true);
 		signInWithEmailAndPassword(auth, data.email, data.password)
@@ -74,7 +75,7 @@ const UseFirebase = () => {
 			.finally(() => setLoading(false));
 	};
 
-	// onauth state change===================================
+	//======== onauth state change===================================
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
@@ -87,7 +88,7 @@ const UseFirebase = () => {
 		return unsubscribe;
 	}, []);
 
-	// Logout===============================
+	//=================== Logout===============================
 	const logout = () => {
 		signOut(auth)
 			.then(() => {

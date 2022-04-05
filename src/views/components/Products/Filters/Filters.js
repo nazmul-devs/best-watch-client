@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 
-const catagory = ["men", "women", "sports", "kids"];
+const catagory = ["male", "female", "iTouch", "timex"];
 
 const Filters = ({ filterProduct }) => {
 	return (

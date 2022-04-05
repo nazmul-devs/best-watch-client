@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import FileBase64 from "react-file-base64";
-import { products } from "../../components/Products/Products";
+import AllApi from "../../../api/AllApi";
 
 const AddServiceForm = ({ updateId }) => {
 	// react file base 64
 	const [file, setFile] = useState("");
+	const { allWatch } = AllApi();
 
 	// react hook form
 	const { register, handleSubmit, reset } = useForm();
@@ -15,7 +16,7 @@ const AddServiceForm = ({ updateId }) => {
 
 		reset();
 	};
-	const service = products.find((product) => product.id === updateId);
+	const service = allWatch.find((product) => product.id === updateId);
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)} className="p-5">
 			<Form.Control
@@ -47,7 +48,6 @@ const AddServiceForm = ({ updateId }) => {
 				<Form.Select
 					placeholder="Gender"
 					className="rounded"
-					defaultChecked={"Women"}
 					{...register("gender")}
 				>
 					<option value="Men">Male</option>

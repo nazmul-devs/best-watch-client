@@ -33,7 +33,7 @@ const Cart = () => {
 		<>
 			<button onClick={handleShow} className="cart-btn">
 				<span className="cart-icon">
-					<i class="fas fa-shopping-cart"></i>
+					<i className="fas fa-shopping-cart"></i>
 				</span>
 				<span className="cart-quantity">{totalQuantity}</span>
 			</button>
@@ -56,12 +56,12 @@ const Cart = () => {
 							/>
 							<span>
 								<button className="float-end remove-item-btn border-0">
-									<i class="far fa-times-circle "></i>
+									<i className="far fa-times-circle "></i>
 								</button>
 								<h6 className="p-0 m-0 text-justify">{item.title}</h6>
 								<p className="p-0 m-0" style={{ fontSize: "16px" }}>
-									{item.quantity} <i class="fas fa-times mx-1"></i>$
-									{item.price}
+									{item.quantity} <i className="fas fa-times mx-1"></i>
+									${item.price}
 								</p>
 							</span>
 						</div>
@@ -85,7 +85,7 @@ const Cart = () => {
 								size="sm"
 								variant="outline-secondary py-1 px-3"
 							>
-								<i class="fas fa-check me-2"></i>CHECKOUT
+								<i className="fas fa-check me-2"></i>CHECKOUT
 							</Button>
 						</Link>
 					</span>

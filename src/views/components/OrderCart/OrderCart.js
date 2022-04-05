@@ -33,11 +33,11 @@ const OrderCart = ({ product }) => {
 				<i className="fas fa-sync-alt me-2"></i> Free 90-Day returns
 			</h6>
 			<h6>
-				<i class="fas fa-check-circle me-2"></i> Best price
+				<i className="fas fa-check-circle me-2"></i> Best price
 			</h6>
 			<h6>
-				<i class="far fa-credit-card me-2"></i> Different payment methods
-				and EMI
+				<i className="far fa-credit-card me-2"></i> Different payment
+				methods and EMI
 			</h6>
 			<hr />
 			<p>

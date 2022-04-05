@@ -2,12 +2,13 @@ import React from "react";
 import "./productDetails.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { products } from "../../components/Products/Products";
 import OrderCart from "../../components/OrderCart/OrderCart";
+import AllApi from "../../../api/AllApi";
 
 const ProductDetals = (props) => {
-	const { index } = useParams();
-	const product = products[index];
+	const { id } = useParams();
+	const { allWatch } = AllApi();
+	const product = allWatch.find((watch) => watch._id === id);
 
 	return (
 		<div className="m-5 product-details">
