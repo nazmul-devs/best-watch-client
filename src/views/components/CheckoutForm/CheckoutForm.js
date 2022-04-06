@@ -1,13 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 
-const CheckoutForm = () => {
-	// react hook form
-	const { register, handleSubmit, reset } = useForm();
-	const onSubmit = (data) => {
-		console.log(data);
-	};
+const CheckoutForm = ({ handleSubmit, onSubmit, register }) => {
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<Form.Control

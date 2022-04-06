@@ -1,8 +1,9 @@
 import { React, useState } from "react";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import AllApi from "../../../api/AllApi";
 import Filters from "./Filters/Filters";
 import Product from "./Product/Product";
+import spinner from "../../../assests/logo/spinner.gif";
 
 const Products = () => {
 	const { allWatch } = AllApi();
@@ -30,9 +31,9 @@ const Products = () => {
 			<hr />
 			<Container>
 				{!allWatch.length ? (
-					<Spinner animation="border" role="status">
-						<span className="visually-hidden">Loading...</span>
-					</Spinner>
+					<div className="d-flex justify-content-center align-items-center">
+						<img src={spinner} alt="Loading..." />
+					</div>
 				) : (
 					<Row xs={1} md={2} lg={4} className="g-4">
 						{!filtered.length

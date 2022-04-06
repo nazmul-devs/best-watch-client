@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { addToDb } from "../../../hooks/UseCartLS";
 import "./style.css";
 
 const OrderCart = ({ product }) => {
@@ -47,7 +48,11 @@ const OrderCart = ({ product }) => {
 			</p>
 			<hr />
 			<div className="d-flex justify-content-between">
-				<Button variant="outline-secondary" disabled={quantity === 0}>
+				<Button
+					onClick={() => addToDb(product._id, quantity)}
+					variant="outline-secondary"
+					disabled={quantity === 0}
+				>
 					Add to cart
 				</Button>
 				<Button variant="outline-secondary" disabled={quantity === 0}>
