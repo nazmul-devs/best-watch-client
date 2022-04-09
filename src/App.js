@@ -16,6 +16,7 @@ import AddService from "./views/pages/AddService/AddService";
 import Admin from "./views/pages/Admin/Admin";
 import Details from "./views/pages/Details/Details";
 import MyOrders from "./views/pages/MyOrders/MyOrders";
+import AdminRoute from "./views/pages/AdminRoute/AdminRoute";
 
 function App() {
 	// Cart setup
@@ -27,7 +28,9 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/addService" element={<AddService />} />
-					<Route path="/admin" element={<Admin />} />
+					<Route path="/admin" element={<AdminRoute />}>
+						<Route path="*" element={<Admin />} />
+					</Route>
 					<Route path="/checkout" element={<Checkout />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/myorders" element={<MyOrders />} />

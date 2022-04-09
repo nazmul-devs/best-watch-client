@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import { addToDb } from "../../../../hooks/UseCartLS";
 import "./product.css";
 
 const Product = ({ product }) => {
@@ -21,7 +22,7 @@ const Product = ({ product }) => {
 							</Card.Text>
 						</span>
 						<p className="card-title">{product.title}</p>
-						<span className="d-flex">
+						<span className="d-flex ">
 							<Rating
 								className="card-rating me-2"
 								initialRating={product.rating}

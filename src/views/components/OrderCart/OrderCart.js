@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import UseAuth from "../../../hooks/UseAuth";
 import { addToDb } from "../../../hooks/UseCartLS";
 import "./style.css";
 
 const OrderCart = ({ product }) => {
+	const { setCartReload } = UseAuth();
 	const { title, brand, price } = product;
 	const [quantity, setQuantity] = useState(1);
 	const totalPrice = quantity * price;
+
+	const addToCart = (id, quantity) => {
+		setCartReload(false);
+		addToDb(id, quantity);
+	};
 	return (
 		<div className="p-4 shadow rounded">
 			<p className="text-uppercase m-0 p-0">brand: {brand}</p>
@@ -49,7 +56,7 @@ const OrderCart = ({ product }) => {
 			<hr />
 			<div className="d-flex justify-content-between">
 				<Button
-					onClick={() => addToDb(product._id, quantity)}
+					onClick={() => addToCart(product._id, quantity)}
 					variant="outline-secondary"
 					disabled={quantity === 0}
 				>

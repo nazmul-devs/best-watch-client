@@ -19,7 +19,8 @@ const provider = new GoogleAuthProvider();
 const UseFirebase = () => {
 	// internal variable
 	const [user, setUser] = useState({});
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
+	const [cartReload, setCartReload] = useState(false);
 	const [error, setError] = useState("");
 
 	//===================== google login=========================
@@ -84,6 +85,7 @@ const UseFirebase = () => {
 				setUser({});
 			}
 			setError("");
+			setLoading(false);
 		});
 		return unsubscribe;
 	}, []);
@@ -99,7 +101,17 @@ const UseFirebase = () => {
 			});
 	};
 
-	return { googleLogin, error, user, logout, registerUser, login, loading };
+	return {
+		googleLogin,
+		error,
+		user,
+		logout,
+		registerUser,
+		login,
+		loading,
+		cartReload,
+		setCartReload,
+	};
 };
 
 export default UseFirebase;

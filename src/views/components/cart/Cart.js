@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { Offcanvas, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AllApi from "../../../api/AllApi";
+import UseAuth from "../../../hooks/UseAuth";
 import {
 	getStoredCart,
 	removeFromDb,
@@ -10,12 +11,14 @@ import {
 import "./style.css";
 
 const Cart = () => {
+	const { cartReload, setCartReload } = UseAuth();
 	const [reload, setReload] = useState(false);
 	const [cart, setCart] = useState([]);
 	const { allWatch } = AllApi();
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+	console.log(cartReload);
 
 	// get total ===============
 	let totalQuantity = 0;
@@ -38,7 +41,8 @@ const Cart = () => {
 		}
 		setCart(savedCart);
 		setReload(false);
-	}, [allWatch, reload]);
+		setCartReload(true);
+	}, [allWatch, reload, cartReload]);
 
 	const clearCart = () => {
 		deleteShoppingCart();

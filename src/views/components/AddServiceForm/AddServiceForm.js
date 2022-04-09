@@ -16,26 +16,27 @@ const AddServiceForm = ({ updateId }) => {
 
 		reset();
 	};
-	const service = allWatch.find((product) => product.id === updateId);
+	const service = allWatch.find((product) => product._id === updateId);
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)} className="p-5">
 			<Form.Control
 				className="mb-3 rounded"
 				placeholder="Service title"
 				{...register("title")}
-				defaultValue={updateId ? service.title : null}
+				defaultValue={service ? service.title : null}
 			/>
 			<Form.Control
 				as="textarea"
 				className="mb-3 rounded"
 				placeholder="Description"
-				defaultValue={updateId ? service.description : null}
+				defaultValue={service ? service.description : null}
 				{...register("description")}
 				rows={3}
 			/>
 			<Form.Control
 				className="mb-3 rounded"
 				placeholder="Brand"
+				defaultValue={service ? service.brand : null}
 				{...register("brand")}
 			/>
 
@@ -43,11 +44,13 @@ const AddServiceForm = ({ updateId }) => {
 				<Form.Control
 					className=" rounded me-2"
 					placeholder="Price"
+					defaultValue={service ? service.price : null}
 					{...register("price")}
 				/>
 				<Form.Select
 					placeholder="Gender"
 					className="rounded"
+					defaultValue={"Women"}
 					{...register("gender")}
 				>
 					<option value="Men">Male</option>

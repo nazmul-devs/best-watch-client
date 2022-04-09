@@ -7,15 +7,21 @@ import AdminServices from "../../components/AdminServices/AdminServices";
 const Admin = () => {
 	const { allWatch } = AllApi();
 	const [updateId, setUpdateId] = useState(null);
+	console.log(updateId);
 	return (
 		<Container>
 			<Row className="my-5">
 				<Col xs={12} md={7}>
 					{!allWatch.length ? (
-						<Spinner animation="grow" className="mx-auto" />
+						<div
+							className="d-flex justify-content-center align-items-center"
+							style={{ minHeight: "90vh" }}
+						>
+							<Spinner animation="grow" />
+						</div>
 					) : (
 						<AdminServices
-							allWatch={allWatch}
+							services={allWatch}
 							setUpdateId={setUpdateId}
 						/>
 					)}

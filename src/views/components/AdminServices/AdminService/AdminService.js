@@ -22,7 +22,7 @@ const AdminService = ({ service, setUpdateId }) => {
 				</Card.Body>
 				<Card.Footer className="d-flex justify-content-between">
 					<Button
-						onClick={() => setUpdateId(service.id)}
+						onClick={() => setUpdateId(service._id)}
 						size="sm"
 						variant="secondary"
 					>
