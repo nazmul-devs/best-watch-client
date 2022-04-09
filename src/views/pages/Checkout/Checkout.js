@@ -2,21 +2,38 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import AllApi from "../../../api/AllApi";
-import { getStoredCart } from "../../../hooks/UseCartLS";
+import { deleteShoppingCart, getStoredCart } from "../../../hooks/UseCartLS";
 import CheckoutCart from "../../components/CheckoutCart/CheckoutCart";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 
 const Checkout = () => {
-	// react hook form
-	const { register, handleSubmit, reset } = useForm();
-	const onSubmit = (data) => {
-		console.log(data);
-		reset();
-	};
-
 	// ===========================
 	const [cart, setCart] = useState([]);
 	const { allWatch } = AllApi();
+
+	// delete unusual property from cart
+	for (const item of cart) {
+		delete item.description;
+		delete item.features;
+		delete item.gender;
+		delete item.rating;
+	}
+
+	// react hook form
+	const { register, handleSubmit, reset } = useForm();
+	const onSubmit = (data) => {
+		if (data.country === "Bangladesh") {
+			data.delivaryCharge = 12;
+		} else if (data.country === "India") {
+			data.delivaryCharge = 100;
+		} else {
+			data.delivaryCharge = 110;
+		}
+		data.orderedItems = cart;
+		console.log(data);
+		deleteShoppingCart();
+		reset();
+	};
 
 	useEffect(() => {
 		const storedCart = getStoredCart();

@@ -2,10 +2,15 @@ import { React, useEffect, useState } from "react";
 import { Offcanvas, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AllApi from "../../../api/AllApi";
-import { getStoredCart, removeFromDb } from "../../../hooks/UseCartLS";
+import {
+	getStoredCart,
+	removeFromDb,
+	deleteShoppingCart,
+} from "../../../hooks/UseCartLS";
 import "./style.css";
 
 const Cart = () => {
+	const [reload, setReload] = useState(false);
 	const [cart, setCart] = useState([]);
 	const { allWatch } = AllApi();
 	const [show, setShow] = useState(false);
@@ -32,7 +37,17 @@ const Cart = () => {
 			}
 		}
 		setCart(savedCart);
-	}, [allWatch, totalQuantity]);
+		setReload(false);
+	}, [allWatch, reload]);
+
+	const clearCart = () => {
+		deleteShoppingCart();
+		setReload(true);
+	};
+	const removeItem = (id) => {
+		removeFromDb(id);
+		setReload(true);
+	};
 
 	return (
 		<>
@@ -61,7 +76,7 @@ const Cart = () => {
 							/>
 							<span>
 								<button
-									onClick={() => removeFromDb(item._id)}
+									onClick={() => removeItem(item._id)}
 									className="float-end remove-item-btn border-0"
 								>
 									<i className="far fa-times-circle "></i>
@@ -82,6 +97,7 @@ const Cart = () => {
 					</span>
 					<span className="d-flex justify-content-around my-4">
 						<Button
+							onClick={clearCart}
 							size="sm"
 							variant="outline-warning rounded-pill py-1 px-3"
 						>

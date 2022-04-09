@@ -11,11 +11,11 @@ import NotFound from "./views/pages/NotFound/NotFound";
 import AuthProvider from "./contexts/AuthProvider";
 import Footer from "./views/components/Footer/Footer";
 import Products from "./views/components/Products/Products";
-import MyOrder from "./views/pages/MyOrder/MyOrder";
 import Checkout from "./views/pages/Checkout/Checkout";
 import AddService from "./views/pages/AddService/AddService";
 import Admin from "./views/pages/Admin/Admin";
 import Details from "./views/pages/Details/Details";
+import MyOrders from "./views/pages/MyOrders/MyOrders";
 
 function App() {
 	// Cart setup
@@ -30,7 +30,7 @@ function App() {
 					<Route path="/admin" element={<Admin />} />
 					<Route path="/checkout" element={<Checkout />} />
 					<Route path="/login" element={<Login />} />
-					<Route path="/myorder" element={<MyOrder />} />
+					<Route path="/myorders" element={<MyOrders />} />
 					<Route path="/services" element={<Products />} />
 					<Route path="/productdetails/:id" element={<Details />} />
 					<Route path="/register" element={<Register />} />
