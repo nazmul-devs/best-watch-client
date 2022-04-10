@@ -7,12 +7,17 @@ import AllApi from "../../../api/AllApi";
 const AddServiceForm = ({ updateId }) => {
 	// react file base 64
 	const [file, setFile] = useState("");
-	const { allWatch } = AllApi();
+	const { allWatch, addWatch, updateWatch } = AllApi();
 
 	// react hook form
 	const { register, handleSubmit, reset } = useForm();
 	const onSubmit = (data) => {
 		data.img = file;
+		if (updateId) {
+			updateWatch(updateId, data);
+		} else {
+			addWatch(data);
+		}
 
 		reset();
 	};

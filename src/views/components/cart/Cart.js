@@ -18,7 +18,6 @@ const Cart = () => {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-	console.log(cartReload);
 
 	// get total ===============
 	let totalQuantity = 0;

@@ -9,6 +9,7 @@ import "./style.css";
 
 const Header = ({ handleShow }) => {
 	const { user } = UseAuth();
+	console.log(user);
 	return (
 		<Navbar
 			collapseOnSelect

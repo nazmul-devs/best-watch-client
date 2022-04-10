@@ -6,6 +6,7 @@ const api = axios.create({
 
 const AllApi = () => {
 	const [allWatch, setAllWatch] = useState([]);
+	const [allOrder, setAllOrder] = useState([]);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -31,7 +32,20 @@ const AllApi = () => {
 		console.log(res);
 	};
 
-	return { allWatch };
+	useEffect(() => {
+		const getOrders = async () => {
+			const response = await api.get("/order/all");
+			setAllOrder(response.data);
+		};
+		getOrders();
+	}, [allOrder]);
+
+	const deleteOrder = (id) => {
+		const response = api.delete(`/order/${id}`);
+		console.log(response);
+	};
+
+	return { allWatch, addWatch, updateWatch, deleteWatch, deleteOrder };
 };
 
 export default AllApi;

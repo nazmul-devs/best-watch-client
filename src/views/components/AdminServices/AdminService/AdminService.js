@@ -1,7 +1,9 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
+import AllApi from "../../../../api/AllApi";
 
 const AdminService = ({ service, setUpdateId }) => {
+	const { deleteWatch } = AllApi();
 	return (
 		<Col className="my-2">
 			<Card>
@@ -28,7 +30,11 @@ const AdminService = ({ service, setUpdateId }) => {
 					>
 						<i className="far fa-edit me-2"> </i> Edit
 					</Button>
-					<Button size="sm" variant="warning fw-bold">
+					<Button
+						onClick={() => deleteWatch(service._id)}
+						size="sm"
+						variant="warning fw-bold"
+					>
 						<i className="far fa-trash-alt me-2"></i> Delete
 					</Button>
 				</Card.Footer>
