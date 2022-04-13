@@ -9,7 +9,7 @@ import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 const Checkout = () => {
 	// ===========================
 	const [cart, setCart] = useState([]);
-	const { allWatch } = AllApi();
+	const { allWatch, submitOrder } = AllApi();
 
 	// delete unusual property from cart
 	for (const item of cart) {
@@ -30,7 +30,7 @@ const Checkout = () => {
 			data.delivaryCharge = 110;
 		}
 		data.orderedItems = cart;
-		console.log(data);
+		submitOrder(data);
 		deleteShoppingCart();
 		reset();
 	};

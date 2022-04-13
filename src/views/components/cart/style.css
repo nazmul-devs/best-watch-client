@@ -12,7 +12,6 @@
 .cart-btn {
 	background: none;
 	border: none;
-	margin: 0 20px;
 	position: relative;
 }
 .cart-btn .cart-quantity {

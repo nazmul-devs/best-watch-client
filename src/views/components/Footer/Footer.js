@@ -25,7 +25,7 @@ const footerInfo = [
 
 const Footer = () => {
 	return (
-		<div className="mt-5">
+		<div>
 			<div className="feedback text-center p-4">
 				<p>We’d love to hear what you think!</p>
 				<Button
@@ -51,7 +51,7 @@ const Footer = () => {
 						</Col>
 						{footerInfo.map((info, index) => (
 							<Col key={index} xs="12" md="2">
-								<h6 className="text-secondary">{info.title}</h6>
+								<h6 className="fw-bold">{info.title}</h6>
 								{info.links.map((link, index) => (
 									<a
 										key={index}
@@ -64,11 +64,11 @@ const Footer = () => {
 							</Col>
 						))}
 					</Row>
+					<hr />
+					<p className="text-center copy-right-text m-0 pb-3">
+						© 2022 Walmart. All Rights Reserved.{" "}
+					</p>
 				</Container>
-				<hr />
-				<p className="text-center copy-right-text m-0 pb-3">
-					© 2022 Walmart. All Rights Reserved.{" "}
-				</p>
 			</div>
 		</div>
 	);

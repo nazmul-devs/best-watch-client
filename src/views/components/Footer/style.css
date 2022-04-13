@@ -1,13 +1,13 @@
 .footer {
-	background: #34b0c9;
+	background: #00ca97;
 }
 .footer a {
 	text-decoration: none;
-	color: #000;
+	color: #000000ce;
 	font-weight: 600;
 	font-size: 17px;
 	cursor: pointer;
 }
 .feedback {
-	background: #d3f8ff;
+	background: #ffe8ff;
 }

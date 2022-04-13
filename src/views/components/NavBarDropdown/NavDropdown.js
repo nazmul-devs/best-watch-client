@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import UseFirebase from "../../../hooks/UseFirebase";
 
@@ -7,18 +7,21 @@ const NavDropdown = () => {
 	const { user, logout } = UseFirebase();
 	return (
 		<Dropdown>
-			<Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
+			<Dropdown.Toggle
+				variant="outline-secondary rounded-0"
+				id="dropdown-basic"
+			>
 				<i className="fas fa-user-circle me-2"></i>
 				{user.displayName}
 			</Dropdown.Toggle>
 
 			<Dropdown.Menu>
 				<Dropdown.Item as={Link} to="/myorders">
-					My Orders
+					MY ORDERS
 				</Dropdown.Item>
-				<Dropdown.Item href="#/action-2">Return request</Dropdown.Item>
+				<Dropdown.Item href="#/action-2">RETURN REQUEST</Dropdown.Item>
 				<Dropdown.Item onClick={logout}>
-					<i className="fas fa-sign-out-alt me-2"></i> Logout
+					<i className="fas fa-sign-out-alt me-2"></i> LOGOUT
 				</Dropdown.Item>
 			</Dropdown.Menu>
 		</Dropdown>

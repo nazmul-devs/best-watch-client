@@ -1,6 +1,16 @@
 .nav-items > .nav-item {
-	color: black;
+	color: #000000d0;
 	font-weight: 600;
 	margin: 0 15px;
 	text-decoration: none;
+}
+.login-btn {
+	background: #009ee7;
+	font-weight: 600;
+	color: #fff;
+	transition: 0.3s;
+	box-shadow: -4px 4px 2px #808080b4;
+}
+.login-btn:hover {
+	background: #0173a8;
 }

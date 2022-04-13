@@ -1,68 +1,63 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../../../assests/logo/logo.jpg";
+import AllApi from "../../../api/AllApi";
+import logo from "../../../assests/logo/logo.png";
 import UseAuth from "../../../hooks/UseAuth";
 import Cart from "../cart/Cart";
 import NavDropdown from "../NavBarDropdown/NavDropdown";
 import "./style.css";
 
-const Header = ({ handleShow }) => {
+const Header = () => {
 	const { user } = UseAuth();
-	console.log(user);
+	const { users } = AllApi();
+	const admin = users.find((usr) => usr.email === user.email);
+
 	return (
 		<Navbar
 			collapseOnSelect
 			expand="lg"
-			style={{ backgroundColor: "#FFC93C" }}
+			style={{ padding: "0 8vw" }}
 			variant="dark"
 		>
-			<Container>
-				<Link to="/">
-					<img src={logo} width="70" className="rounded-circle" alt="" />
-				</Link>
-				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav className="me-auto nav-items d-flex align-items-center">
-						{user.email && (
-							<>
-								<Cart />
-								{user.role === "admin" && (
-									<>
-										<Link to="/addService" className="nav-item">
-											Add service
-										</Link>
-										<Link to="/login" className="nav-item">
-											Update
-										</Link>
-										<Link to="/login" className="nav-item">
-											Delete
-										</Link>
-										<Link to="/login" className="nav-item">
-											All order
-										</Link>
-									</>
-								)}
-							</>
-						)}
-						<Link to="/services" className="nav-item">
-							Services
-						</Link>
-						<Link to="/admin" className="nav-item">
-							Admin
-						</Link>
-					</Nav>
-					<Nav>
-						{user.email ? (
-							<NavDropdown />
-						) : (
-							<Link to="/login">
-								<Button className="px-3 py-1">Login</Button>
+			<Link to="/">
+				<img
+					src={logo}
+					style={{ width: "7vw" }}
+					className="bg-danger"
+					alt=""
+				/>
+			</Link>
+			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+			<Navbar.Collapse id="responsive-navbar-nav">
+				<Nav className="mx-auto nav-items d-flex align-items-center">
+					{user.email && (
+						<>
+							<Link to="/" className="nav-item">
+								HOME
 							</Link>
-						)}
-					</Nav>
-				</Navbar.Collapse>
-			</Container>
+							<Link to="/services" className="nav-item">
+								SERVICES
+							</Link>
+							<Link to="/admin" className="nav-item">
+								ADMIN
+							</Link>
+							<Cart />
+						</>
+					)}
+				</Nav>
+				<Nav>
+					{user.email ? (
+						<NavDropdown />
+					) : (
+						<Link to="/login">
+							<button className="px-4 login-btn py-2  border-0 ">
+								LOGIN
+							</button>
+						</Link>
+					)}
+				</Nav>
+			</Navbar.Collapse>
 		</Navbar>
 	);
 };

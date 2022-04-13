@@ -1,3 +1,28 @@
+.best-watch {
+	background: #f7f7f7;
+}
 .banner {
 	background: #07689f;
+}
+.banner-text h4 {
+	color: #f7f7f7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.banner-text h3 {
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.banner-text button {
+	border: none;
+	background: #fff;
+	color: #07689f;
+	font-weight: 600;
+	padding: 8px 25px;
+}
+.banner-text button:hover {
+	background: #f7f7f7;
+	border: 1px solid lightblue;
+	color: rgb(16, 78, 150);
 }

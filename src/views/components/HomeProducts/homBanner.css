@@ -1,0 +1,16 @@
+.home-product {
+	background: #e8f6ef;
+}
+
+.more-service-btn {
+	background: #fa9702;
+	padding: 8px 17px;
+	font-weight: 600;
+	color: #fff;
+	margin: 30px 0;
+	transform: 0.9s;
+}
+.more-service-btn:hover {
+	background: #dd8500;
+	transform: translateX(5px);
+}

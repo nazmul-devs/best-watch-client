@@ -1,13 +1,15 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+import UseAuth from "../../../hooks/UseAuth";
 
 const CheckoutForm = ({ handleSubmit, onSubmit, register }) => {
+	const { user } = UseAuth();
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<Form.Control
 				type="text"
 				className="rounded mb-4"
-				placeholder="Your name"
+				defaultValue={user.displayName}
 				{...register("name")}
 			/>
 			<Form.Control
@@ -20,7 +22,7 @@ const CheckoutForm = ({ handleSubmit, onSubmit, register }) => {
 			<Form.Control
 				type="text"
 				className="rounded my-4"
-				placeholder="Your email address"
+				value={user.email}
 				{...register("email")}
 			/>
 			<Form.Control

@@ -1,0 +1,53 @@
+.home-container {
+	max-width: 100%;
+	overflow: hidden;
+	padding-left: 8vw;
+}
+.home-container .side-bar {
+	width: 8vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	background-color: white;
+}
+.side-bar .socila-icons {
+	position: absolute;
+	top: 37px;
+	width: 36px;
+	list-style: none;
+}
+.side-bar .socila-icons .socila-icon {
+	display: inline-block;
+	margin: 12px 0;
+	list-style: none;
+}
+.side-bar .socila-icons .socila-icon a {
+	color: black;
+	border: 1px solid black;
+	padding: 4px 6px;
+	border-radius: 50%;
+	opacity: 0.7;
+	box-shadow: 2px 2px 3px gray;
+	transition: 0.6s;
+}
+
+.side-bar .socila-icons .socila-icon .fb {
+	color: black;
+	border: 1px solid black;
+	padding: 4px 9px;
+	border-radius: 50%;
+	opacity: 0.7;
+}
+.side-bar h6 {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transform: rotate(-90deg);
+	width: 300px;
+	position: absolute;
+	bottom: 180px;
+	left: calc(50% - 150px);
+	opacity: 0.8;
+}

@@ -5,27 +5,28 @@ import bannerImg from "../../../assests/images/banner-img.png";
 
 const bannerInfo = {
 	title: "Invicta Men's Pro Diver Quartz Watch with Stainless Steel Strap",
-	description: [
+	description:
 		"Stainless steel case 40mm diameter x 12.5mm thick; Black dial; Magnified date window: Luminous hands and hour markers",
-		"Japanese quartz movement, PC32 Caliber; Assembled in Japan; SR626SW battery included; Watch weight: 140 grams",
-	],
+	price: 145,
 };
 
 const Banner = () => {
 	return (
-		<Container className="my-5">
-			<div className="rounded banner d-flex align-items-center justify-content-around p-4 ">
+		<div className="py-5 best-watch">
+			<h5 className="text-uppercase mb-4">best watch for this week</h5>
+			<Container className="banner d-flex align-items-center justify-content-around p-4 ">
 				<div className="banner-text text-justify text-white w-50">
-					<h2 className="banner-title mb-5 text-bold">
-						{bannerInfo.title}
-					</h2>
-					{bannerInfo.description.map((des, index) => (
-						<p key={index}>{des}</p>
-					))}
+					<h4 className="banner-title">{bannerInfo.title}</h4>
+
+					<p className="my-5">{bannerInfo.description} </p>
+					<span className="d-flex justify-content-between ">
+						<h3>PRICE: ${bannerInfo.price}</h3>
+						<button>BUY NOW</button>
+					</span>
 				</div>
 				<img src={bannerImg} alt="" />
-			</div>
-		</Container>
+			</Container>
+		</div>
 	);
 };
 

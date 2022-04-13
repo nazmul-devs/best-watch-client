@@ -1,0 +1,5 @@
+.banner-container {
+	background: url("../../../assests/images/banner-bg.jpg") no-repeat center;
+	background-size: cover;
+	height: 88vh;
+}
