@@ -20,7 +20,7 @@ const LoginForm = ({ value }) => {
 		reset();
 	};
 	return (
-		<div className="login-form p-4">
+		<div className="login-form p-4 rounded	">
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<h3 className="text-center mb-2">{value}</h3>
 				<Form.Group className="mb-3" controlId="formBasicEmail">

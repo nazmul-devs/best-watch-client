@@ -1,13 +1,12 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 
 const WatchDetails = ({ watch }) => {
 	return (
-		<Container>
+		<div>
 			<h3 className="mb-5">{watch.title} </h3>
 			<img src={watch.img} className="img-fluid" alt="" />
-			<div>
-				<h6 className="fw-bold">About this item</h6>
+			<div className="me-3">
+				<h6 className="fw-bold mt-3">About this item</h6>
 				<hr />
 				<h6>Product details</h6>
 				<p className="text-secondary">{watch.description}</p>
@@ -35,7 +34,7 @@ const WatchDetails = ({ watch }) => {
 				<h6 className="fw-bold">Gender</h6>
 				<p className="text-capitalize">{watch.gender}</p>
 			</div>
-		</Container>
+		</div>
 	);
 };
 

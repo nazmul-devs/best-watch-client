@@ -5,12 +5,12 @@ const catagory = ["male", "female", "iTouch", "timex"];
 
 const Filters = ({ filterProduct }) => {
 	return (
-		<Container className="filters d-flex justify-content-between pt-3">
-			<h5>FILTERS</h5>
-			<div className="catagory d-flex">
+		<Container className="filters d-block d-md-flex justify-content-between align-items-center pt-3">
+			<h6>FILTER BY CATAGORY</h6>
+			<div className="catagory d-block	">
 				<Button
 					variant="btn"
-					className="border-0 rounded-pill px-3 fw-bold text-primary bg-none"
+					className="border-0 rounded-pill px-3 fw-bold bg-secondary text-white rounded-pill bg-none me-2"
 					size="sm"
 					onClick={() => filterProduct("all")}
 				>
@@ -33,7 +33,7 @@ const Filters = ({ filterProduct }) => {
 				size="sm"
 				type="search"
 				placeholder="Search by brands and more"
-				className="w-25"
+				className="w-25 rounded-0 border-0 my-3"
 			/>
 		</Container>
 	);

@@ -1,0 +1,31 @@
+.order-cart {
+	background-color: #fff;
+}
+.quantity-btns {
+	background: #ddd;
+	padding: 4px 0;
+	box-shadow: 1px 1px 1px 1px #cecece;
+}
+.quantity-btns button {
+	border: none;
+	font-weight: bold;
+	background: white;
+	padding: 4px 12px;
+}
+.quantity-btns button:hover {
+	background: #ddd;
+	color: white;
+	border: 1px solid white;
+	padding: 3px 11px;
+}
+
+.order-btns button {
+	background: #ddd;
+	border: none;
+	padding: 6px 18px;
+	text-transform: uppercase;
+	box-shadow: 2px 2px 1.5px #808080e5;
+}
+.order-btns button:hover {
+	box-shadow: 2px 2px 4px gray;
+}

@@ -15,11 +15,11 @@
 	position: relative;
 }
 .cart-btn .cart-quantity {
-	background: #ffffffb4;
+	background: #ddd;
 	color: #17043c;
 	font-weight: bold;
 	font-size: 15px;
-	padding: 0 5px;
+	padding: 0 6px;
 	border-radius: 50%;
 	position: absolute;
 	top: -5px;

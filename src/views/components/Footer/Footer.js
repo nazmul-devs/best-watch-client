@@ -50,7 +50,12 @@ const Footer = () => {
 							</p>
 						</Col>
 						{footerInfo.map((info, index) => (
-							<Col key={index} xs="12" md="2">
+							<Col
+								key={index}
+								xs="12"
+								md="2"
+								className="d-none d-sm-block"
+							>
 								<h6 className="fw-bold">{info.title}</h6>
 								{info.links.map((link, index) => (
 									<a

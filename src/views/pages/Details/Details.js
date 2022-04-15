@@ -11,24 +11,26 @@ const Details = () => {
 	const { allWatch } = AllApi();
 	const product = allWatch.find((watch) => watch._id === id);
 	return (
-		<div className="m-5 product-details">
-			{!product ? (
-				<div
-					className="d-flex align-items-center justify-content-center"
-					style={{ minHeight: "70vh" }}
-				>
-					<Spinner animation="grow" />
-				</div>
-			) : (
-				<Row>
-					<Col sm={12} md={6} lg={8}>
-						<WatchDetails watch={product} />
-					</Col>
-					<Col sm={12} md={6} lg={4} className="shopping-cart">
-						<OrderCart product={product} />
-					</Col>
-				</Row>
-			)}
+		<div className=" product-details py-5">
+			<Container>
+				{!product ? (
+					<div
+						className="d-flex align-items-center justify-content-center"
+						style={{ minHeight: "70vh" }}
+					>
+						<Spinner animation="grow" />
+					</div>
+				) : (
+					<Row>
+						<Col sm={12} md={6} lg={8} className="p-0">
+							<WatchDetails watch={product} />
+						</Col>
+						<Col sm={12} md={6} lg={4} className="shopping-cart p-0">
+							<OrderCart product={product} />
+						</Col>
+					</Row>
+				)}
+			</Container>
 		</div>
 	);
 };

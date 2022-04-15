@@ -7,9 +7,9 @@ import "./product.css";
 
 const Product = ({ product }) => {
 	return (
-		<Col className="product-card">
+		<Col className="product-card ">
 			<Link className="link" to={`/productdetails/${product._id}`}>
-				<Card className="card border-0">
+				<Card className="card border-0 rounded-0">
 					<Card.Img variant="top" src={product.img} />
 
 					<Card.Body className="text-start card-body">

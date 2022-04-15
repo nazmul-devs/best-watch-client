@@ -14,19 +14,9 @@ const Header = () => {
 	const admin = users.find((usr) => usr.email === user.email);
 
 	return (
-		<Navbar
-			collapseOnSelect
-			expand="lg"
-			style={{ padding: "0 8vw" }}
-			variant="dark"
-		>
+		<Navbar collapseOnSelect expand="lg" variant="light">
 			<Link to="/">
-				<img
-					src={logo}
-					style={{ width: "7vw" }}
-					className="bg-danger"
-					alt=""
-				/>
+				<img src={logo} className="bg-danger logo-img" alt="logo" />
 			</Link>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
@@ -51,7 +41,7 @@ const Header = () => {
 						<NavDropdown />
 					) : (
 						<Link to="/login">
-							<button className="px-4 login-btn py-2  border-0 ">
+							<button className="px-4 login-btn py-2  border-0">
 								LOGIN
 							</button>
 						</Link>

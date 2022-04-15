@@ -1,12 +1,13 @@
 .checkout {
-	background: #cfe2f3;
+	background: #ffffff;
 }
-.checkout .item {
-	border-bottom: 2px solid #f0fbff;
-}
+
 .checkout .item h6 {
 	font-size: 18px;
 }
 .promo-code-input {
 	font-size: 16px;
+	border: none;
+	background-color: #ddd;
+	width: 100%;
 }

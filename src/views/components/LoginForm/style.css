@@ -1,10 +1,8 @@
 .login-form {
 	background: #fff;
-	border-radius: 20px;
 	width: 400px;
 }
 .form-control {
-	border-radius: 13px;
 	font-size: 17px;
 }
 .form-label {

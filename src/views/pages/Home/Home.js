@@ -7,7 +7,7 @@ import HomeProducts from "../../components/HomeProducts/HomeProducts";
 const Home = () => {
 	return (
 		<div className="home-container">
-			<div className="side-bar">
+			<div className="side-bar d-none d-md-block">
 				<ul className="socila-icons">
 					<li className="socila-icon">
 						<a href="#">

@@ -1,8 +1,3 @@
-.home-container {
-	max-width: 100%;
-	overflow: hidden;
-	padding-left: 8vw;
-}
 .home-container .side-bar {
 	width: 8vw;
 	height: 100vh;
@@ -50,4 +45,12 @@
 	bottom: 180px;
 	left: calc(50% - 150px);
 	opacity: 0.8;
+}
+
+@media only screen and (min-width: 766px) {
+	.home-container {
+		max-width: 100%;
+		overflow: hidden;
+		padding-left: 8vw;
+	}
 }

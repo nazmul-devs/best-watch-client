@@ -69,11 +69,11 @@ const Cart = () => {
 					{cart.map((item, index) => (
 						<div
 							key={index}
-							className="d-flex align-items-center justify-content-around border-bottom cart-item"
+							className="d-flex align-items-center justify-content-around cart-item shadow my-3"
 						>
 							<img
 								width={120}
-								className="img-fluid me-3"
+								className="img-fluid me-3 p-2"
 								src={item.img}
 								alt=""
 							/>
@@ -102,7 +102,7 @@ const Cart = () => {
 						<Button
 							onClick={clearCart}
 							size="sm"
-							variant="outline-warning rounded-pill py-1 px-3"
+							variant="danger rounded-pill py-1 px-3"
 						>
 							CLEAR CART
 						</Button>
@@ -110,7 +110,7 @@ const Cart = () => {
 							<Button
 								onClick={handleClose}
 								size="sm"
-								variant="outline-secondary py-1 px-3"
+								variant="secondary py-1 px-3"
 							>
 								<i className="fas fa-check me-2"></i>CHECKOUT
 							</Button>

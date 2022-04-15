@@ -1,3 +1,6 @@
+.logo-img {
+	width: 60px;
+}
 .nav-items > .nav-item {
 	color: #000000d0;
 	font-weight: 600;
@@ -13,4 +16,28 @@
 }
 .login-btn:hover {
 	background: #0173a8;
+}
+
+@media only screen and (min-width: 766px) {
+	.navbar {
+		padding: 0 8vw;
+	}
+	.logo-img {
+		width: 7vw;
+	}
+}
+
+@media only screen and (max-width: 766px) {
+	.nav-items > .nav-item {
+		margin: 15px 0;
+	}
+
+	.login-btn {
+		margin: 0 auto;
+		background: #009ee7;
+		font-weight: 600;
+		color: #fff;
+		transition: 0.3s;
+		box-shadow: -4px 4px 2px #808080b4;
+	}
 }

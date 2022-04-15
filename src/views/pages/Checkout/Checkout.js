@@ -49,21 +49,23 @@ const Checkout = () => {
 		setCart(savedCart);
 	}, [allWatch]);
 	return (
-		<Container>
-			<h3 className="my-5">Checkout</h3>
-			<Row>
-				<Col xs="12" md="8">
-					<CheckoutForm
-						onSubmit={onSubmit}
-						register={register}
-						handleSubmit={handleSubmit}
-					/>
-				</Col>
-				<Col xs="12" md="4">
-					<CheckoutCart cart={cart} />
-				</Col>
-			</Row>
-		</Container>
+		<div style={{ backgroundColor: "#ddd" }} className="py-5">
+			<Container>
+				<h5 className="text-uppercase mb-4 ">Checkout</h5>
+				<Row>
+					<Col xs="12" md="7">
+						<CheckoutForm
+							onSubmit={onSubmit}
+							register={register}
+							handleSubmit={handleSubmit}
+						/>
+					</Col>
+					<Col xs="12" md="5">
+						<CheckoutCart cart={cart} />
+					</Col>
+				</Row>
+			</Container>
+		</div>
 	);
 };
 

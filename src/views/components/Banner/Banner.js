@@ -12,9 +12,9 @@ const bannerInfo = {
 
 const Banner = () => {
 	return (
-		<div className="py-5 best-watch">
-			<h5 className="text-uppercase mb-4">best watch for this week</h5>
-			<Container className="banner d-flex align-items-center justify-content-around p-4 ">
+		<div className="py-5 best-watch d-none d-sm-block">
+			<h5 className="text-uppercase mb-4 ms-5">best watch for this week</h5>
+			<Container className="banner d-flex text-center align-items-center justify-content-around p-4 ">
 				<div className="banner-text text-justify text-white w-50">
 					<h4 className="banner-title">{bannerInfo.title}</h4>
 

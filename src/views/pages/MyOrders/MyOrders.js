@@ -10,11 +10,13 @@ const MyOrders = () => {
 
 	const myOrders = allOrder.filter((order) => order.email === user.email);
 	return (
-		<Container>
-			{myOrders?.map((order) => (
-				<Orders order={order} key={order._id} />
-			))}
-		</Container>
+		<div style={{ backgroundColor: "#E8F6EF" }}>
+			<Container>
+				{myOrders?.map((order) => (
+					<Orders order={order} key={order._id} />
+				))}
+			</Container>
+		</div>
 	);
 };
 

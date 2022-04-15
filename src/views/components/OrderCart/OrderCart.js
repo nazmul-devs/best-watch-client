@@ -15,26 +15,19 @@ const OrderCart = ({ product }) => {
 		addToDb(id, quantity);
 	};
 	return (
-		<div className="p-4 shadow rounded">
-			<p className="text-uppercase m-0 p-0">brand: {brand}</p>
-			<h6 className="my-3">{title}</h6>
-			<h6 className="fw-bold">Total price: ${totalPrice}</h6>
-			<div className="border rounded d-flex align-items-center justify-content-center my-3">
-				<Button
-					variant="outline-secondary"
+		<div className="p-4 order-cart">
+			<h6 className="mb-3">{title}</h6>
+			<h5>Total price: ${totalPrice.toFixed(2)}</h5>
+			<div className="d-flex align-items-center justify-content-center my-3 quantity-btns">
+				<button
 					disabled={quantity === 0}
 					onClick={() => setQuantity(quantity - 1)}
 				>
 					-
-				</Button>
+				</button>
 
-				<h6 className="m-0 mx-3">{quantity} added</h6>
-				<Button
-					variant="outline-secondary"
-					onClick={() => setQuantity(quantity + 1)}
-				>
-					+
-				</Button>
+				<h6 className="m-0 mx-4 ">{quantity} added</h6>
+				<button onClick={() => setQuantity(quantity + 1)}>+</button>
 			</div>
 			<p>Sold and shipped by Best watch</p>
 			<h6>
@@ -54,17 +47,17 @@ const OrderCart = ({ product }) => {
 				contents.
 			</p>
 			<hr />
-			<div className="d-flex justify-content-between">
-				<Button
+			<div className="d-flex justify-content-between order-btns">
+				<button
 					onClick={() => addToCart(product._id, quantity)}
 					variant="outline-secondary"
 					disabled={quantity === 0}
 				>
 					Add to cart
-				</Button>
-				<Button variant="outline-secondary" disabled={quantity === 0}>
+				</button>
+				<button variant="outline-secondary" disabled={quantity === 0}>
 					Order now
-				</Button>
+				</button>
 			</div>
 		</div>
 	);
