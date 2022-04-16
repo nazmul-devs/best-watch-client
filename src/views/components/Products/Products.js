@@ -40,26 +40,29 @@ const Products = () => {
 			setFiltered(filterWatch);
 		}
 	};
+
+	// spinner
+	if (!allWatch.length) {
+		return (
+			<div className="border-top text-center">
+				<img className="mx-auto" src={spinner} alt="Loading..." />
+			</div>
+		);
+	}
 	return (
 		<div style={{ backgroundColor: "#eeee" }}>
 			<Filters filterProduct={filterProduct} />
 			<Container className="pb-5 mt-3">
 				<hr />
-				{!allWatch.length ? (
-					<div className="d-flex justify-content-center align-items-center">
-						<img src={spinner} alt="Loading..." />
-					</div>
-				) : (
-					<Row xs={1} md={2} lg={4} className="g-4">
-						{!filtered.length
-							? currentBlogs.map((product, index) => (
-									<Product key={index} product={product}></Product>
-							  ))
-							: filtered.map((product, index) => (
-									<Product key={index} product={product}></Product>
-							  ))}
-					</Row>
-				)}
+				<Row xs={1} md={2} lg={4} className="g-4">
+					{!filtered.length
+						? currentBlogs.map((product, index) => (
+								<Product key={index} product={product}></Product>
+						  ))
+						: filtered.map((product, index) => (
+								<Product key={index} product={product}></Product>
+						  ))}
+				</Row>
 			</Container>
 
 			<div className="pagination-btns pb-5">

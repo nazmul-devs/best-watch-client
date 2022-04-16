@@ -1,12 +1,23 @@
 import React from "react";
 import "./homBanner.css";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AllApi from "../../../api/AllApi";
 import Product from "../Products/Product/Product";
 
 const HomeProducts = () => {
 	const { allWatch } = AllApi();
+
+	if (!allWatch.length) {
+		return (
+			<div
+				className="d-flex justify-content-center align-items-center"
+				style={{ minHeight: "90vh" }}
+			>
+				<Spinner animation="grow" />
+			</div>
+		);
+	}
 	return (
 		<div className="home-product">
 			<Container>

@@ -1,9 +1,28 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
+import swal from "sweetalert";
 import AllApi from "../../../../api/AllApi";
 
 const AdminService = ({ service, setUpdateId }) => {
 	const { deleteWatch } = AllApi();
+
+	// cancel order
+	const deleteProduct = (id) => {
+		swal({
+			title: "Are you sure?",
+			text: "You want to delete this product",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				swal("Watch has been canceled", {
+					icon: "success",
+				});
+				deleteWatch(id);
+			}
+		});
+	};
 	return (
 		<Col className="my-2">
 			<Card>
@@ -31,7 +50,7 @@ const AdminService = ({ service, setUpdateId }) => {
 						<i className="far fa-edit me-2"> </i> Edit
 					</Button>
 					<Button
-						onClick={() => deleteWatch(service._id)}
+						onClick={() => deleteProduct(service._id)}
 						size="sm"
 						variant="warning fw-bold"
 					>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import swal from "sweetalert";
 const api = axios.create({
 	baseURL: "https://serene-peak-15631.herokuapp.com",
 });
@@ -8,6 +9,7 @@ const AllApi = () => {
 	const [allWatch, setAllWatch] = useState([]);
 	const [allOrder, setAllOrder] = useState([]);
 	const [users, setUsers] = useState([]);
+	const [reload, setReload] = useState(null);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -15,40 +17,42 @@ const AllApi = () => {
 			setAllWatch(response.data);
 		};
 		getData();
-	}, [allWatch.length]);
+		setReload(false);
+	}, [allWatch.length, reload]);
 
 	const addWatch = async (data) => {
 		const res = await api.post("/watch", data);
-		console.log(res);
+		res.status && swal("Good job!", "You added a product!", "success");
 	};
 
 	const deleteWatch = async (id) => {
 		const res = await api.delete(`/watch/${id}`);
-		console.log(res);
-		alert("This data deleted");
+		res.status && setReload(true);
 	};
 
 	const updateWatch = async (id, data) => {
 		const res = await api.patch(`/watch/${id}`, data);
-		console.log(res);
+		res.status && setReload(true);
 	};
 
 	useEffect(() => {
+		setReload(true);
 		const getOrders = async () => {
 			const response = await api.get("/order");
 			setAllOrder(response.data);
 		};
 		getOrders();
-	}, []);
+		setReload(false);
+	}, [reload, allOrder.length]);
 
 	const submitOrder = async (data) => {
 		const response = await api.post("/order", data);
-		console.log(response);
+		response.status && setReload(true);
 	};
 
 	const deleteOrder = async (id) => {
 		const response = await api.delete(`/order/${id}`);
-		console.log(response);
+		response.status && setReload(true);
 	};
 
 	useEffect(() => {
@@ -57,7 +61,7 @@ const AllApi = () => {
 			setUsers(res.data);
 		};
 		getUsers();
-	}, []);
+	}, [reload]);
 
 	return {
 		allWatch,

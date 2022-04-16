@@ -11,17 +11,17 @@ const Home = () => {
 				<ul className="socila-icons">
 					<li className="socila-icon">
 						<a href="#">
-							<i class="fab fa-twitter"></i>
+							<i className="fab fa-twitter"></i>
 						</a>
 					</li>
 					<li className="socila-icon">
 						<a href="#">
-							<i class="fab fa-linkedin-in"></i>
+							<i className="fab fa-linkedin-in"></i>
 						</a>
 					</li>
 					<li className="socila-icon">
 						<a href="#" className="fb">
-							<i class="fab fa-facebook-f"></i>
+							<i className="fab fa-facebook-f"></i>
 						</a>
 					</li>
 				</ul>

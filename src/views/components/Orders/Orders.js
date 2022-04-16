@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import AllApi from "../../../api/AllApi";
 import OrderItem from "./OrderItem";
+import swal from "sweetalert";
 
 const Orders = ({ order }) => {
 	const { deleteOrder } = AllApi();
@@ -9,16 +10,34 @@ const Orders = ({ order }) => {
 	for (const item of order.orderedItems) {
 		totalPrice += item.price;
 	}
+
+	// cancel order
+	const cencelOrder = (id) => {
+		swal({
+			title: "Are you sure?",
+			text: "You want to cancel this ordered",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				swal("Your ordered has been canceled", {
+					icon: "success",
+				});
+				deleteOrder(id);
+			}
+		});
+	};
 	return (
-		<div className="d-flex justify-content-center py-5 ">
-			<Row className="border text-center w-75">
+		<Container className="d-flex justify-content-center py-5">
+			<Row className="border text-center  w-75">
 				<div className="d-flex justify-content-between py-2">
 					<h4 className="text-info	">
 						Order id: #{order._id.slice(20, 24)}
 					</h4>
 					<Button
 						variant="info fw-bold text-white"
-						onClick={() => deleteOrder(order._id)}
+						onClick={() => cencelOrder(order._id)}
 					>
 						Cancel order
 					</Button>
@@ -57,7 +76,7 @@ const Orders = ({ order }) => {
 					{totalPrice}
 				</Col>
 			</Row>
-		</div>
+		</Container>
 	);
 };
 

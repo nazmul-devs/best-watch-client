@@ -65,58 +65,74 @@ const Cart = () => {
 				<Offcanvas.Header closeButton>
 					<Offcanvas.Title>Cart contents</Offcanvas.Title>
 				</Offcanvas.Header>
-				<Offcanvas.Body>
-					{cart.map((item, index) => (
-						<div
-							key={index}
-							className="d-flex align-items-center justify-content-around cart-item shadow my-3"
-						>
-							<img
-								width={120}
-								className="img-fluid me-3 p-2"
-								src={item.img}
-								alt=""
-							/>
-							<span>
-								<button
-									onClick={() => removeItem(item._id)}
-									className="float-end remove-item-btn border-0"
-								>
-									<i className="far fa-times-circle "></i>
-								</button>
-								<h6 className="p-0 m-0 text-justify">{item.title}</h6>
-								<p className="p-0 m-0" style={{ fontSize: "16px" }}>
-									{item.quantity} <i className="fas fa-times mx-1"></i>
-									${item.price}
-								</p>
-							</span>
-						</div>
-					))}
-					<span className="d-flex justify-content-around mt-2">
-						<p>Total items:</p>
-						<p>
-							{totalQuantity} Items for ${totalPrice.toFixed(2)}
-						</p>
-					</span>
-					<span className="d-flex justify-content-around my-4">
-						<Button
-							onClick={clearCart}
-							size="sm"
-							variant="danger rounded-pill py-1 px-3"
-						>
-							CLEAR CART
-						</Button>
-						<Link to="/checkout">
-							<Button
+				{!cart.length ? (
+					<>
+						<h5 className="text-center my-5">Your cart is empty</h5>
+						<Link to="/services" className="mx-auto">
+							<button
 								onClick={handleClose}
-								size="sm"
-								variant="secondary py-1 px-3"
+								className="continue-shopping-btn"
 							>
-								<i className="fas fa-check me-2"></i>CHECKOUT
-							</Button>
+								continue shopping
+							</button>
 						</Link>
-					</span>
-				</Offcanvas.Body>
+					</>
+				) : (
+					<Offcanvas.Body>
+						{cart.map((item, index) => (
+							<div
+								key={index}
+								className="d-flex align-items-center justify-content-around cart-item shadow my-3"
+							>
+								<img
+									width={120}
+									className="img-fluid me-3 p-2"
+									src={item.img}
+									alt=""
+								/>
+								<span>
+									<button
+										onClick={() => removeItem(item._id)}
+										className="float-end remove-item-btn border-0"
+									>
+										<i className="far fa-times-circle "></i>
+									</button>
+									<h6 className="p-0 m-0 text-justify">
+										{item.title}
+									</h6>
+									<p className="p-0 m-0" style={{ fontSize: "16px" }}>
+										{item.quantity}{" "}
+										<i className="fas fa-times mx-1"></i>${item.price}
+									</p>
+								</span>
+							</div>
+						))}
+						<span className="d-flex justify-content-around mt-2">
+							<p>Total items:</p>
+							<p>
+								{totalQuantity} Items for ${totalPrice.toFixed(2)}
+							</p>
+						</span>
+						<span className="d-flex justify-content-around my-4">
+							<Button
+								onClick={clearCart}
+								size="sm"
+								variant="danger rounded-pill py-1 px-3"
+							>
+								CLEAR CART
+							</Button>
+							<Link to="/checkout">
+								<Button
+									onClick={handleClose}
+									size="sm"
+									variant="secondary py-1 px-3"
+								>
+									<i className="fas fa-check me-2"></i>CHECKOUT
+								</Button>
+							</Link>
+						</span>
+					</Offcanvas.Body>
+				)}
 			</Offcanvas>
 		</>
 	);

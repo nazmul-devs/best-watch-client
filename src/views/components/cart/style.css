@@ -24,3 +24,10 @@
 	position: absolute;
 	top: -5px;
 }
+
+.continue-shopping-btn {
+	border: none;
+	padding: 8px 25px;
+	color: white;
+	background: orangered;
+}
