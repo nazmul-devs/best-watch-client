@@ -3,7 +3,7 @@ import { Col, Card, Button } from "react-bootstrap";
 import swal from "sweetalert";
 import AllApi from "../../../../api/AllApi";
 
-const AdminService = ({ service, setUpdateId }) => {
+const AdminService = ({ service, setUpdateId, isAdmin }) => {
 	const { deleteWatch } = AllApi();
 
 	// cancel order
@@ -25,12 +25,8 @@ const AdminService = ({ service, setUpdateId }) => {
 	};
 	return (
 		<Col className="my-2">
-			<Card>
-				<Card.Img
-					variant="top"
-					className="border-bottom"
-					src={service.img}
-				/>
+			<Card className="border-0 shadow rounded-0">
+				<Card.Img variant="top" src={service.img} />
 				<Card.Body>
 					<Card.Title>{service.title}</Card.Title>
 					<span
@@ -45,14 +41,15 @@ const AdminService = ({ service, setUpdateId }) => {
 					<Button
 						onClick={() => setUpdateId(service._id)}
 						size="sm"
-						variant="secondary"
+						variant="outline-info rounded-0"
 					>
 						<i className="far fa-edit me-2"> </i> Edit
 					</Button>
 					<Button
 						onClick={() => deleteProduct(service._id)}
+						disabled={!isAdmin}
 						size="sm"
-						variant="warning fw-bold"
+						variant="danger rounded-0"
 					>
 						<i className="far fa-trash-alt me-2"></i> Delete
 					</Button>

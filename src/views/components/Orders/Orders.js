@@ -3,8 +3,10 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import AllApi from "../../../api/AllApi";
 import OrderItem from "./OrderItem";
 import swal from "sweetalert";
+import UseAuth from "../../../hooks/UseAuth";
 
 const Orders = ({ order }) => {
+	const { setCartReload } = UseAuth();
 	const { deleteOrder } = AllApi();
 	let totalPrice = 0;
 	for (const item of order.orderedItems) {
@@ -25,12 +27,13 @@ const Orders = ({ order }) => {
 					icon: "success",
 				});
 				deleteOrder(id);
+				setCartReload(true);
 			}
 		});
 	};
 	return (
-		<Container className="d-flex justify-content-center py-5">
-			<Row className="border text-center  w-75">
+		<Container className="d-flex justify-content-center py-5 ">
+			<Row className="text-center  w-75 bg-light shadow">
 				<div className="d-flex justify-content-between py-2">
 					<h4 className="text-info	">
 						Order id: #{order._id.slice(20, 24)}

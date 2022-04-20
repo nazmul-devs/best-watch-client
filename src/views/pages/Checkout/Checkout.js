@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+
+// internal import
 import AllApi from "../../../api/AllApi";
+import UseAuth from "../../../hooks/UseAuth";
 import { deleteShoppingCart, getStoredCart } from "../../../hooks/UseCartLS";
 import CheckoutCart from "../../components/CheckoutCart/CheckoutCart";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 
 const Checkout = () => {
-	// ===========================
+	const navigate = useNavigate();
 	const [cart, setCart] = useState([]);
 	const { allWatch, submitOrder } = AllApi();
+	const { setCartReload } = UseAuth();
 
 	// delete unusual property from cart
 	for (const item of cart) {
@@ -32,9 +38,13 @@ const Checkout = () => {
 		data.orderedItems = cart;
 		submitOrder(data);
 		deleteShoppingCart();
+		setCartReload(false);
+		swal("Good job!", "Your product ordered successfully!", "success");
+		navigate("/");
 		reset();
 	};
 
+	// get cart item
 	useEffect(() => {
 		const storedCart = getStoredCart();
 		const savedCart = [];

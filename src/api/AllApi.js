@@ -8,8 +8,7 @@ const api = axios.create({
 const AllApi = () => {
 	const [allWatch, setAllWatch] = useState([]);
 	const [allOrder, setAllOrder] = useState([]);
-	const [users, setUsers] = useState([]);
-	const [reload, setReload] = useState(null);
+	const [admin, setAdmin] = useState([]);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -17,8 +16,7 @@ const AllApi = () => {
 			setAllWatch(response.data);
 		};
 		getData();
-		setReload(false);
-	}, [allWatch.length, reload]);
+	}, [allWatch.length]);
 
 	const addWatch = async (data) => {
 		const res = await api.post("/watch", data);
@@ -27,51 +25,48 @@ const AllApi = () => {
 
 	const deleteWatch = async (id) => {
 		const res = await api.delete(`/watch/${id}`);
-		res.status && setReload(true);
+		res.status && swal("Good job!", "You deleted a product!", "success");
 	};
 
 	const updateWatch = async (id, data) => {
 		const res = await api.patch(`/watch/${id}`, data);
-		res.status && setReload(true);
+		res.status && swal("Good job!", "You updated a product!", "success");
 	};
 
 	useEffect(() => {
-		setReload(true);
 		const getOrders = async () => {
 			const response = await api.get("/order");
 			setAllOrder(response.data);
 		};
 		getOrders();
-		setReload(false);
-	}, [reload, allOrder.length]);
+	}, [allOrder]);
 
 	const submitOrder = async (data) => {
-		const response = await api.post("/order", data);
-		response.status && setReload(true);
+		await api.post("/order", data);
 	};
 
 	const deleteOrder = async (id) => {
-		const response = await api.delete(`/order/${id}`);
-		response.status && setReload(true);
+		await api.delete(`/order/${id}`);
+		window.location.reload();
 	};
 
 	useEffect(() => {
 		const getUsers = async () => {
 			const res = await api.get("/user");
-			setUsers(res.data);
+			setAdmin(res.data);
 		};
 		getUsers();
-	}, [reload]);
+	}, [admin]);
 
 	return {
-		allWatch,
-		allOrder,
+		admin,
 		addWatch,
-		updateWatch,
-		deleteWatch,
+		allOrder,
+		allWatch,
 		deleteOrder,
+		deleteWatch,
+		updateWatch,
 		submitOrder,
-		users,
 	};
 };
 

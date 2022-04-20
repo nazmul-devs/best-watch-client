@@ -5,7 +5,7 @@ import FileBase64 from "react-file-base64";
 import AllApi from "../../../api/AllApi";
 import Rating from "react-rating";
 
-const AddServiceForm = ({ updateId }) => {
+const AddServiceForm = ({ updateId, isAdmin }) => {
 	// react file base 64
 	const [file, setFile] = useState("");
 	const [rating, setRating] = useState(0);
@@ -16,17 +16,12 @@ const AddServiceForm = ({ updateId }) => {
 	const onSubmit = (data) => {
 		data.img = file;
 		data.rating = rating;
-		if (updateId) {
-			updateWatch(updateId, data);
-		} else {
-			addWatch(data);
-		}
-
+		updateId ? updateWatch(updateId, data) : addWatch(data);
 		reset();
 	};
 	const service = allWatch.find((product) => product._id === updateId);
 	return (
-		<Form onSubmit={handleSubmit(onSubmit)} className="p-5">
+		<Form onSubmit={handleSubmit(onSubmit)} className=" ms-3 shadow p-3">
 			<Form.Control
 				className="mb-3 rounded"
 				placeholder="Service title"
@@ -80,7 +75,8 @@ const AddServiceForm = ({ updateId }) => {
 			<Form.Control
 				type="submit"
 				className="rounded bg-primary fw-bold text-white mt-4"
-				value="Submit"
+				disabled={!isAdmin}
+				value={!updateId ? "Add product" : "Update"}
 			/>
 		</Form>
 	);

@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+
 import UseAuth from "../../../hooks/UseAuth";
 
 const CheckoutForm = ({ handleSubmit, onSubmit, register }) => {
@@ -25,13 +26,6 @@ const CheckoutForm = ({ handleSubmit, onSubmit, register }) => {
 				value={user.email}
 				{...register("email")}
 			/>
-			<Form.Control
-				type="text"
-				className="rounded my-4 border-0"
-				placeholder="City"
-				{...register("city")}
-				required
-			/>
 
 			<Form.Select
 				aria-label="Default select example"
@@ -39,11 +33,18 @@ const CheckoutForm = ({ handleSubmit, onSubmit, register }) => {
 				{...register("country")}
 				required
 			>
-				<option>Country</option>
 				<option value="Bangladesh">Bangladesh</option>
 				<option value="India">India</option>
 				<option value="Pakistan">Pakistan</option>
 			</Form.Select>
+
+			<Form.Control
+				type="text"
+				className="rounded my-4 border-0"
+				placeholder="City"
+				{...register("city")}
+				required
+			/>
 
 			<Form.Check
 				inline

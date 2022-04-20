@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import UseAuth from "../../../hooks/UseAuth";
 import { addToDb } from "../../../hooks/UseCartLS";
 import "./style.css";
 
 const OrderCart = ({ product }) => {
+	const navigate = useNavigate();
 	const { setCartReload } = UseAuth();
-	const { title, brand, price } = product;
+	const { title, price } = product;
 	const [quantity, setQuantity] = useState(1);
 	const totalPrice = quantity * price;
 
 	const addToCart = (id, quantity) => {
 		setCartReload(false);
 		addToDb(id, quantity);
+		navigate("/services");
 	};
 	return (
 		<div className="p-4 order-cart">

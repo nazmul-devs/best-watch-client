@@ -1,10 +1,10 @@
-.product-details {
+.admin-container {
 	position: relative;
-	background: #ddd;
 }
 
-.order-cart {
+.update-form {
 	position: sticky;
 	height: 700px;
-	top: 0;
+	right: 0;
+	top: 30px;
 }

@@ -25,7 +25,7 @@ const Details = () => {
 						<Col sm={12} md={6} lg={8} className="p-0">
 							<WatchDetails watch={product} />
 						</Col>
-						<Col sm={12} md={6} lg={4} className="shopping-cart p-0">
+						<Col sm={12} md={6} lg={4} className="order-cart p-0">
 							<OrderCart product={product} />
 						</Col>
 					</Row>

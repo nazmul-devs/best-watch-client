@@ -14,11 +14,7 @@ const MyOrders = () => {
 	useEffect(() => {
 		const myOrders = allOrder.filter((order) => order.email === user.email);
 		setMyOrder(myOrders);
-		console.log(myOrder);
-	}, [allOrder.length]);
-
-	console.log(myOrder);
-
+	}, [allOrder]);
 	if (!allOrder.length) {
 		return (
 			<div className="border-top text-center">

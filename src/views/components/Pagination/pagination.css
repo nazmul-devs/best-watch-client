@@ -1,0 +1,20 @@
+.pagination .page-item button,
+.pagi-btn {
+	padding: 7px 15px;
+	margin: 0 10px;
+	border: none;
+	background: #fff;
+	font-weight: 600;
+	box-shadow: 2px 2px 6px gray;
+	transition: 0.2s;
+}
+.pagination .page-item .pagi-btn:hover {
+	transform: scale(1.05);
+	background: gray;
+	color: #fff;
+}
+.pagination .page-item .active {
+	transform: scale(1.1);
+	background: gray;
+	color: #fff;
+}
