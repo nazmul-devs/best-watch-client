@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import Pagination from "../../components/Pagination/Pagination";
 import AllApi from "../../../api/AllApi";
-import Filters from "./Filters/Filters";
 import Product from "./Product/Product";
 import spinner from "../../../assests/logo/spinner.gif";
 
